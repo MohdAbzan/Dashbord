@@ -35,15 +35,16 @@ jobs:
       - name: Build DataLens
         run: npm run build
 
-      - name: Setup GitHub Pages
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload website
+      - name: Upload DataLens
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
   deploy:
+    name: Deploy DataLens
     runs-on: ubuntu-latest
 
     needs: build
